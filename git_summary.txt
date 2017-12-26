@@ -1,0 +1,74 @@
+git学习总结
+
+注：注意每次命令执行后的输出，会提示接下来可能用到的操作
+git版本库的两种创建方式
+	1.先在本地初始化创建一个仓库再与远程库进行绑定连接
+	2.直接创建远程库在本地进行克隆
+方式一
+	# 创建工作空间
+	mkdir git_ws
+	cd git_ws
+	# 工作空间初始化——创建本地仓库
+	# 先创建本地库的方式必须有该命令
+	# 方式二则不需要该命令
+	git init
+
+	# 创建你的文本文件
+	# ...
+	
+	# 添加远程库
+	# 在github中创建新的仓库
+	# 按照导入操作进行
+	git remote add origin [the URL of your repository] / http协议相对于git可能访问速度会慢
+	# git remote add origin git@github.com:zhaoguangbao/learngit.git更快
+	
+	# 推送本地库到远程库（默认的远程库的标识符为origin）
+	# 远程库是空的，第一次推送master分支时，加上了-u参数
+	# Git不但会把本地的master分支内容推送的远程新的master分支
+	# 还会把本地的master分支和远程的master分支关联起来
+	# 在以后的推送或者拉取时就可以简化命令
+	git push -u origin master
+	
+方式二
+	# 创建远程库（此时可以选择勾选Initialize this repository with a README）
+	
+	# 克隆本地库
+	git clone [the URL of your repository]
+	
+	
+一些常用命令
+	# 查看当前库的状态（git跟踪的是文本文件的修改）
+	git status
+	
+	# 将文件导入暂存区（stage）
+	git add [filename]
+	# 将文件由暂存区导入本地版本库
+	git commit -m "message about this commit"
+	# 等价于
+	git commit -am "message abot this commit"
+	
+	注：
+		1.可以多次git add即将多个文件导入到暂存区，一次git commit导入到版本库
+		git add [filename1] [filename2] ...
+		git commit -m "message"
+		
+		2.git commit可以直接执行，执行后将会自动打开编辑器，将提示信息写下即可
+	
+	# 显示版本库内文件的改变
+	git diff
+		
+	注：
+		1.一般在git add / git commit前调用git diff以及git status判断是否更改正确
+		2.git status告诉你有文件被修改过，git diff可以查看修改内容
+		
+	# 显示提交的历史记录	
+	git log / git log --graph /git reflog
+
+	# 复原到先前的某个状态
+	git reset --hard [哈希值]
+	
+	注：
+		1.HEAD指向最近更改提交的指针，HEAD^倒数第一次，HEAD^^倒数第二次，HEAD~100倒数第100次
+	
+	# 分支管理
+	
