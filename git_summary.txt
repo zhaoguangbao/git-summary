@@ -72,3 +72,14 @@ git版本库的两种创建方式
 	
 	# 分支管理
 	
+
+
+
+
+
+
+
+	# 标签的使用
+	git tag v1.0 #创建git标签
+	git tag -a v1.0 -m "message" # 创建带有一定信息的标签
+	git show v1.0 # 显示tag的相关信息
