@@ -56,6 +56,7 @@ git版本库的两种创建方式
 	
 	# 显示版本库内文件的改变
 	git diff
+	# git diff只对已存文件的变化做出反应，对新建的文件并不会输出信息
 		
 	注：
 		1.一般在git add / git commit前调用git diff以及git status判断是否更改正确
@@ -79,8 +80,16 @@ git版本库的两种创建方式
 	git branch -a # 显示本地及远端的所有分支
 	git push origin dev # 向远端推送分支
 	
-	
-
+		# git branch示例
+		git checkout -b dev
+		vim [filename]
+		git add [filename]
+		git commit -m "message" # 该message会显示在git log中
+		git push origin dev # 同步本地库与远程库的dev分支
+				# 注：在分支中的操作与master中完全一致
+		git checkout master
+		git merge dev # 在master中合并dev
+		git push origin master # 同步本地库与远程库
 
 
 
