@@ -100,6 +100,8 @@ git版本库的两种创建方式
 	git show v1.0 # 显示tag的相关信息
 	git push origin --tags # 将本地标签同步到远程端
 	
+	# 
+	git reset --hard [HEAD]/[commit_id]
 
 一些其他的知识点
 	# 1.虽然安装的git默认的编辑器为vim，但同样可利用其他编辑器对文件进行编辑，git一样可以发现文件被修改
