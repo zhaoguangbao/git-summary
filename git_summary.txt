@@ -72,8 +72,14 @@ git版本库的两种创建方式
 	
 	# 分支管理
 	
-
-
+	git branch # 查看本地的分支
+	git branch dev # 创建本地dev分支
+	git branch -d dev # 删除dev分支
+	git checkout -b dev # 创建本地dev分支，并进行切换
+	git branch -a # 显示本地及远端的所有分支
+	git push origin dev # 向远端推送分支
+	
+	
 
 
 
