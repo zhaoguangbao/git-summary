@@ -4,6 +4,19 @@ git学习总结
 git版本库的两种创建方式
 	1.先在本地初始化创建一个仓库再与远程库进行绑定连接
 	2.直接创建远程库在本地进行克隆
+环境变量的配置
+	在家目录：/c/Users/光宝
+		由pwd打印出的目录与windows目录C:/Users/光宝相比容易得出这两者表达形式相同，两者均可以用来切换工作目录
+	cat .gitconfig
+		该文件包含了一些配置信息
+	# 相应的配置命令
+	git config --global user.name [your name]
+	git config --global user.email [your email]
+	git config --global color.ui=auto
+	...
+	可以方便的利用
+	git config --help打开帮助文档
+	git help [command] 打开对应命令的帮助文档
 方式一
 	# 创建工作空间
 	mkdir git_ws
@@ -105,3 +118,12 @@ git版本库的两种创建方式
 
 一些其他的知识点
 	# 1.虽然安装的git默认的编辑器为vim，但同样可利用其他编辑器对文件进行编辑，git一样可以发现文件被修改
+	# 2.关于.git/文件夹的介绍
+		在创建本地库后会自动出现.git/文件夹
+		.git/index: 缓存区stage，二进制文件，用notepad++打开为乱码，但大致可以看出stage包含过的文件
+		.git/objects: 本地库中的文件，为加密文件
+	# 3.关于环境变量的配置
+		安装目录下的etc/文件夹：C:\Program Files\Git\etc
+			注：cd命令不支持转换路径下有特殊字符，很自然的会想到利用转义字符故命令方式为 cd C:/Program\ Files/Git/etc
+		vimrc: 容易猜测应该是vim编辑器的配置文件
+
