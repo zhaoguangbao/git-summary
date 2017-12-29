@@ -129,4 +129,7 @@ git版本库的两种创建方式
 		安装目录下的etc/文件夹：C:\Program Files\Git\etc
 			注：cd命令不支持转换路径下有特殊字符，很自然的会想到利用转义字符故命令方式为 cd C:/Program\ Files/Git/etc
 		vimrc: 容易猜测应该是vim编辑器的配置文件
-
+	# 4.通过远端编辑文件
+		远端编辑文件同样需要相应的提交信息
+		在远端编辑的改变直接在本地库中利用git status无法找出对应的改变，由此也与git只是追踪本地库的修改相对应
+		利用git pull origing master来同步相应的信息
