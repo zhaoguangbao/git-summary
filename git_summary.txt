@@ -151,3 +151,9 @@ git版本库的两种创建方式
 	 git rm test.txt
 	 git commit -m "remove test.txt"
 	 git push
+git创建标签
+	git tag <name> 为当前分支，最新commit创建标签
+	git tag 显示当前分支拥有的标签
+	创建带有说明的标签，用-a指定标签名，-m指定说明文字
+	git tag -a v0.1 -m "version 0.1 released"
+	git show <tagname> 查看说明文字
