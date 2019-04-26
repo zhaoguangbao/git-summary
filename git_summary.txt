@@ -157,3 +157,4 @@ git创建标签
 	创建带有说明的标签，用-a指定标签名，-m指定说明文字
 	git tag -a v0.1 -m "version 0.1 released"
 	git show <tagname> 查看说明文字
+	git push origin --tags 提交所有创建的标签到远端
