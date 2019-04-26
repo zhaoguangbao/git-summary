@@ -148,9 +148,12 @@ git版本库的两种创建方式
 删除仓库中的文件
 	 rm test.txt #从当地删除（物理删除）
 	 git status
-	 git rm test.txt
+	 git rm test.txt #从本地库删除
 	 git commit -m "remove test.txt"
-	 git push
+	 git push #push前必须有git commit动作
+删除仓库中的文件夹
+	rm test -r -f
+	git rm test -r -f #其他同文件删除操作
 git创建标签
 	git tag <name> 为当前分支，最新commit创建标签
 	git tag 显示当前分支拥有的标签
