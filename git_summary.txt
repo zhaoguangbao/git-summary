@@ -161,3 +161,8 @@ git创建标签
 	git tag -a v0.1 -m "version 0.1 released"
 	git show <tagname> 查看说明文字
 	git push origin --tags 提交所有创建的标签到远端
+git丢弃本地修改（未上传到远端仓库）
+	git checkout . #本地所有修改的，没有的提交的，都返回到原来的状态
+	git stash #把所有没有提交的修改暂存到stash里面，可用git stash pop恢复
+	git reset --hard HASH #返回到某个节点，不保留修改
+	git reset --soft HASH #返回到某个节点，保留修改
