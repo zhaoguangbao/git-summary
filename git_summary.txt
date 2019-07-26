@@ -185,3 +185,23 @@ git提示warning: LF will be replaced by CRLF
 	     case3:仅开发windows程序，不考虑跨平台
 	     	可以设置 false 取消此功能，把回车保留在版本库中
 		git config --global core.autocrlf false
+git ignore: .gitignore
+	# 以'#'开始的行，被视为注释.                                                                                                      
+	# 忽略掉所有文件名是 foo.txt的文件.
+	foo.txt
+	# 忽略所有生成的 html文件,
+	*.html
+	# foo.html是手工维护的，所以例外.
+	!foo.html
+	# 忽略所有.o和 .a文件.
+	*.[oa]
+配置语法：
+	以斜杠“/”开头表示目录；
+	以星号“*”通配多个字符；
+	以问号“?”通配单个字符
+	以方括号“[]”包含单个字符的匹配列表；
+	以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
+	
+	需要强调的一点是，如果在创建.gitignore文件之前就push了项目，那么即使在.gitignore文件中写入新的过滤规则，
+	这些规则也不会起作用，Git仍然会对所有文件进行版本管理。出现这种问题的原因就是Git已经开始管理这些文件了，
+	所以无法再通过过滤规则过滤它们。
