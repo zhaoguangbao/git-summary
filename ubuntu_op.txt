@@ -1,0 +1,3 @@
+find ./ -name "*urdf*"            # 递归查询文件名中包含urdf的文件
+grep -r "*urdf*"                  # 递归查询文件中包含urdf的文件
+dpkg -l | grep gazebo             # 查找已安装的包含gazebo的软件
