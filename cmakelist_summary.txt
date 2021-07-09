@@ -1,5 +1,30 @@
 set(CMAKE_CXX_FLAGS "-std=c++11") # 添加c++11编译标志
 
+# ex boost 库
+find_package(Boost REQUIRED COMPONENTS thread)
+include_directories(${Boost_INCLUDE_DIRS})
+
+add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME}  ${Boost_LIBRARIES})
+
+######
+message("mymsg: ${Boost_INCLUDE_DIRS}")
+# output
+mymsg: /usr/include
+
+# Rename executable.
+set_target_properties(${PROJECT_NAME}_generate_candidates 
+                      PROPERTIES OUTPUT_NAME generate_candidates 
+                      PREFIX "")
+
+set_target_properties(${PROJECT_NAME}_grasp_candidates_generator 
+                      PROPERTIES OUTPUT_NAME grasp_candidates_generator)
+
+# Set the location for library installation (/usr/lib in this case is not really necessary)
+# Use "sudo make install" to apply
+install(TARGETS ${PROJECT_NAME}_grasp_candidates_generator 
+        DESTINATION lib)
+
 # 递归查找cmakelists.txt当前所在目录中main*.cpp文件，并循环操作，实现添加多个可执行程序
 file(GLOB_RECURSE mains RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/main*.cpp")
 foreach(mainfile IN LISTS mains)
